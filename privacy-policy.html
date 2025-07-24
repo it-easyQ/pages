@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - easyQ & ownerQ</title>
+<style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: #f7f8fa; color: #333; }
+    header { background: #2db493; color: white; padding: 20px; text-align: center; }
+    h1 { margin: 0; font-size: 28px; }
+    nav { display: flex; flex-wrap: wrap; justify-content: center; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    nav button { background: none; border: none; padding: 15px 25px; font-size: 16px; cursor: pointer; transition: 0.3s; }
+    nav button:hover { background: #f0f0f0; }
+    section { display: none; max-width: 900px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    section.active { display: block; }
+    h2 { color: #2db493; margin-bottom: 10px; }
+    .lang { margin: 15px 0; text-align: center; }
+    .lang button { padding: 8px 16px; margin: 5px; border: 1px solid #ccc; border-radius: 5px; background: #fff; cursor: pointer; transition: 0.3s; }
+    .lang button:hover { background: #2db493; color: #fff; border-color: #2db493; }
+    ul { margin-left: 20px; }
+    footer { text-align: center; margin: 20px 0; color: #666; font-size: 14px; }
+    a { color: #2db493; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    /* Responsive */
+    @media (max-width: 600px) {
+        nav button { flex: 1 1 100%; }
+        section { margin: 10px; padding: 15px; }
+        h1 { font-size: 22px; }
+    }
+</style>
+<script>
+function showSection(id) {
+    document.querySelectorAll('section').forEach(function(s) { s.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+}
+function switchLang(sectionId, lang) {
+    document.querySelectorAll('#' + sectionId + ' .lang-content').forEach(function(c) { c.style.display = 'none'; });
+    document.getElementById(sectionId + '-' + lang).style.display = 'block';
+}
+</script>
+</head>
+<body>
+
+<header>
+    <h1>Privacy Policy</h1>
+</header>
+
+<nav>
+    <button onclick="showSection('easyq')">easyQ</button>
+    <button onclick="showSection('ownerq')">ownerQ</button>
+</nav>
+
+<!-- easyQ -->
+<section id="easyq" class="active">
+    <div class="lang">
+        <button onclick="switchLang('easyq','it')">Italiano</button>
+        <button onclick="switchLang('easyq','en')">English</button>
+    </div>
+    <div id="easyq-it" class="lang-content" style="display:block;">
+        <h2>Privacy Policy - easyQ</h2>
+        <p><strong>Ultimo aggiornamento:</strong> 24/07/2025</p>
+        <p>La presente informativa descrive come easyQ raccoglie e tratta i dati personali degli utenti.</p>
+        <h3>Dati raccolti</h3>
+        <ul>
+            <li>Nome, Cognome, Email, Numero di telefono, Sesso, Età</li>
+            <li>Password (crittografata con bcrypt + SHA256)</li>
+            <li>Google Token ID per login con Google</li>
+            <li>Posizione geografica (solo mentre l'app è in uso)</li>
+            <li>Preferenze utente salvate nel nostro database</li>
+            <li>Dati di utilizzo tramite Google Analytics</li>
+            <li>Accesso fotocamera (solo per lettura QR code, non obbligatorio)</li>
+        </ul>
+        <h3>Finalità</h3>
+        <ul>
+            <li>Gestione account e autenticazione</li>
+            <li>Localizzazione esercizi vicini</li>
+            <li>Miglioramento servizio tramite analytics</li>
+        </ul>
+        <h3>Condivisione</h3>
+        <p>I dati non vengono venduti a terzi. Potremmo condividere informazioni con Google (login, analytics).</p>
+        <h3>Sicurezza</h3>
+        <p>I dati sono protetti con misure di sicurezza avanzate e conservati solo per il tempo necessario.</p>
+        <h3>Diritti</h3>
+        <p>Puoi richiedere accesso, rettifica o cancellazione dei tuoi dati scrivendo a <a href="mailto:easyq.it@gmail.com">easyq.it@gmail.com</a>.</p>
+    </div>
+    <div id="easyq-en" class="lang-content" style="display:none;">
+        <h2>Privacy Policy - easyQ</h2>
+        <p><strong>Last update:</strong> July 24, 2025</p>
+        <p>This privacy policy explains how easyQ collects and processes user personal data.</p>
+        <h3>Data collected</h3>
+        <ul>
+            <li>Name, Surname, Email, Phone number, Gender, Age</li>
+            <li>Password (encrypted using bcrypt + SHA256)</li>
+            <li>Google Token ID for Google login</li>
+            <li>Device location (only while using the app)</li>
+            <li>User preferences stored in our database</li>
+            <li>Usage data via Google Analytics</li>
+            <li>Camera access (for QR scanning only, optional)</li>
+        </ul>
+        <h3>Purpose</h3>
+        <ul>
+            <li>Account management and authentication</li>
+            <li>Find nearby businesses</li>
+            <li>Improve services through analytics</li>
+        </ul>
+        <h3>Data sharing</h3>
+        <p>No data is sold to third parties. Data may be shared with Google (login, analytics).</p>
+        <h3>Security</h3>
+        <p>Data is protected with advanced security measures and kept only as long as necessary.</p>
+        <h3>User rights</h3>
+        <p>You can request access, correction or deletion of your data at <a href="mailto:easyq.it@gmail.com">easyq.it@gmail.com</a>.</p>
+    </div>
+</section>
+
+<!-- ownerQ -->
+<section id="ownerq">
+    <div class="lang">
+        <button onclick="switchLang('ownerq','it')">Italiano</button>
+        <button onclick="switchLang('ownerq','en')">English</button>
+    </div>
+    <div id="ownerq-it" class="lang-content" style="display:block;">
+        <h2>Privacy Policy - ownerQ</h2>
+        <p><strong>Ultimo aggiornamento:</strong> 24/07/2025</p>
+        <p>La presente informativa descrive come ownerQ raccoglie e tratta i dati personali degli esercenti.</p>
+        <h3>Dati raccolti</h3>
+        <ul>
+            <li>Nome, Cognome, Email, Numero di telefono</li>
+            <li>Password (crittografata con bcrypt + SHA256)</li>
+            <li>Latitudine e longitudine del locale</li>
+            <li>Dati di utilizzo tramite Google Analytics</li>
+        </ul>
+        <h3>Finalità</h3>
+        <ul>
+            <li>Registrazione e gestione esercente</li>
+            <li>Gestione delle code</li>
+            <li>Analisi e miglioramento del servizio</li>
+        </ul>
+        <h3>Condivisione</h3>
+        <p>I dati non vengono venduti a terzi. Potremmo condividere informazioni con Google (analytics).</p>
+        <h3>Sicurezza</h3>
+        <p>I dati sono protetti con misure di sicurezza avanzate e conservati solo per il tempo necessario.</p>
+        <h3>Diritti</h3>
+        <p>Puoi richiedere accesso, rettifica o cancellazione dei tuoi dati scrivendo a <a href="mailto:easyq.it@gmail.com">easyq.it@gmail.com</a>.</p>
+    </div>
+    <div id="ownerq-en" class="lang-content" style="display:none;">
+        <h2>Privacy Policy - ownerQ</h2>
+        <p><strong>Last update:</strong> July 24, 2025</p>
+        <p>This privacy policy explains how ownerQ collects and processes merchant personal data.</p>
+        <h3>Data collected</h3>
+        <ul>
+            <li>Name, Surname, Email, Phone number</li>
+            <li>Password (encrypted using bcrypt + SHA256)</li>
+            <li>Latitude and longitude of the business location</li>
+            <li>Usage data via Google Analytics</li>
+        </ul>
+        <h3>Purpose</h3>
+        <ul>
+            <li>Merchant registration and management</li>
+            <li>Queue management</li>
+            <li>Service improvement through analytics</li>
+        </ul>
+        <h3>Data sharing</h3>
+        <p>No data is sold to third parties. Data may be shared with Google (analytics).</p>
+        <h3>Security</h3>
+        <p>Data is protected with advanced security measures and kept only as long as necessary.</p>
+        <h3>User rights</h3>
+        <p>You can request access, correction or deletion of your data at <a href="mailto:easyq.it@gmail.com">easyq.it@gmail.com</a>.</p>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 easyQ & ownerQ. Tutti i diritti riservati.
+</footer>
+
+</body>
+</html>
