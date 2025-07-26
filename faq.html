@@ -1,78 +1,100 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Supporto - EasyQ</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ & Supporto - easyQ</title>
+<style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; background: #f7f8fa; color: #333; }
+    header { background: #2db493; color: white; padding: 20px; text-align: center; }
+    h1 { margin: 0; font-size: 28px; }
+    nav { display: flex; justify-content: center; flex-wrap: wrap; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    nav button { background: none; border: none; padding: 15px 25px; font-size: 16px; cursor: pointer; transition: 0.3s; }
+    nav button:hover { background: #f0f0f0; }
+    section { display: none; max-width: 900px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    section.active { display: block; }
+    h2 { color: #2db493; margin-bottom: 10px; }
+    .lang { margin: 15px 0; text-align: center; }
+    .lang button { padding: 8px 16px; margin: 5px; border: 1px solid #ccc; border-radius: 5px; background: #fff; cursor: pointer; transition: 0.3s; }
+    .lang button:hover { background: #2db493; color: #fff; border-color: #2db493; }
+    ul { margin-left: 20px; }
+    footer { text-align: center; margin: 20px 0; color: #666; font-size: 14px; }
+    a { color: #2db493; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    /* Responsive */
+    @media (max-width: 600px) {
+        nav button { flex: 1 1 100%; }
+        section { margin: 10px; padding: 15px; }
+        h1 { font-size: 22px; }
     }
-    header {
-      background: #2db493;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-    }
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 15px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    h1, h2 {
-      color: #2db493;
-    }
-    a {
-      color: #2db493;
-      text-decoration: none;
-    }
-    .contact {
-      background: #f1f1f1;
-      padding: 15px;
-      border-radius: 5px;
-      margin-top: 20px;
-    }
-    footer {
-      text-align: center;
-      font-size: 14px;
-      padding: 10px;
-      margin-top: 20px;
-      color: #666;
-    }
-  </style>
+</style>
+<script>
+function showSection(id) {
+    document.querySelectorAll('section').forEach(function(s) { s.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+}
+function switchLang(sectionId, lang) {
+    document.querySelectorAll('#' + sectionId + ' .lang-content').forEach(function(c) { c.style.display = 'none'; });
+    document.getElementById(sectionId + '-' + lang).style.display = 'block';
+}
+</script>
 </head>
 <body>
-  <header>
-    <h1>Supporto EasyQ</h1>
-    <p>Benvenuto nella pagina di supporto ufficiale di EasyQ</p>
-  </header>
-  <div class="container">
-    <h2>Chi siamo</h2>
-    <p>EasyQ è un'app innovativa che ti permette di entrare in coda nei tuoi locali preferiti in modo semplice e veloce.</p>
-    
-    <h2>FAQ</h2>
-    <ul>
-      <li><strong>Come posso creare un account?</strong><br>Scarica l'app e segui la procedura guidata nella schermata di registrazione.</li>
-      <li><strong>Posso usare l'app senza registrarmi?</strong><br>Sì, puoi sfogliare i locali senza login. Per entrare in coda, invece, è richiesta la registrazione.</li>
-      <li><strong>Come posso cancellare il mio account?</strong><br>Vai su Impostazioni nell'app e seleziona "Elimina account".</li>
-    </ul>
-    
-    <div class="contact">
-      <h2>Contattaci</h2>
-      <p>Email: <a href="mailto:support@easyq.app">support@easyq.app</a></p>
+
+<header>
+    <h1>FAQ & Supporto</h1>
+</header>
+
+<nav>
+    <button onclick="showSection('faq')">FAQ</button>
+    <button onclick="showSection('support')">Supporto</button>
+</nav>
+
+<!-- FAQ -->
+<section id="faq" class="active">
+    <div class="lang">
+        <button onclick="switchLang('faq','it')">Italiano</button>
+        <button onclick="switchLang('faq','en')">English</button>
     </div>
-  </div>
-  
-  <footer>
-    © 2025 EasyQ - Tutti i diritti riservati
-  </footer>
+    <div id="faq-it" class="lang-content" style="display:block;">
+        <h2>Domande Frequenti</h2>
+        <ul>
+            <li><strong>Posso usare l'app senza registrarmi?</strong><br>Sì, puoi sfogliare i locali senza login. Per entrare in coda è necessario un account.</li>
+            <li><strong>Come elimino il mio account?</strong><br>Vai su Impostazioni → Elimina Account.</li>
+            <li><strong>I miei dati sono al sicuro?</strong><br>Sì, utilizziamo crittografia e misure di sicurezza avanzate.</li>
+        </ul>
+    </div>
+    <div id="faq-en" class="lang-content" style="display:none;">
+        <h2>Frequently Asked Questions</h2>
+        <ul>
+            <li><strong>Can I use the app without signing up?</strong><br>Yes, you can browse venues without logging in. Joining a queue requires an account.</li>
+            <li><strong>How do I delete my account?</strong><br>Go to Settings → Delete Account.</li>
+            <li><strong>Is my data safe?</strong><br>Yes, we use encryption and advanced security measures.</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Support -->
+<section id="support">
+    <div class="lang">
+        <button onclick="switchLang('support','it')">Italiano</button>
+        <button onclick="switchLang('support','en')">English</button>
+    </div>
+    <div id="support-it" class="lang-content" style="display:block;">
+        <h2>Contattaci</h2>
+        <p>Per qualsiasi problema o domanda, puoi scriverci a:</p>
+        <p>Email: <a href="mailto:support@easyq.app">support@easyq.app</a></p>
+    </div>
+    <div id="support-en" class="lang-content" style="display:none;">
+        <h2>Contact Us</h2>
+        <p>For any questions or issues, contact us at:</p>
+        <p>Email: <a href="mailto:support@easyq.app">support@easyq.app</a></p>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 easyQ. All rights reserved.
+</footer>
+
 </body>
 </html>
